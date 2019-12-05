@@ -1,0 +1,3 @@
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW 
+`transactions`  AS  select `payment`.`id` AS `id`,`student`.`fname` AS `fname`,`student`.`mname` AS `mname`,`student`.`lname` AS `lname`,`payment`.`transact_id` AS `transact_id`, `payment`.`paid_to` AS 
+`paid_to`, `payment`.`amount` AS `amount`,`payment`.`paym_date` AS `paym_date` from (`payment` join `student` on((`payment`.`paid_by` = `student`.`id`))) ;
